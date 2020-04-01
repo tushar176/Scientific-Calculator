@@ -7,7 +7,9 @@ import tkinter.messagebox
 
 root = Tk()
 root.title("Scientific Calculator")
-root.iconbitmap('C:\\Users\\lenovo\\Desktop\\Scientific Calculator\\folder_X9K_icon.ico')
+#root.iconbitmap('C:\\Users\\lenovo\\Desktop\\Scientific Calculator\\icons\\main_icon2.ico')
+main_icon=PhotoImage(file="icons\\main_icon.png")
+root.iconphoto(False, main_icon)
 
 root.configure()
 root.resizable(width=False, height=False)
@@ -315,11 +317,13 @@ def Standard():
     root.resizable(width=False, height=False)
     root.geometry("480x559+250+100")
 
+scientific_jcon=PhotoImage(file="icons\\scientific_icon.png")
+standard_jcon=PhotoImage(file="icons\\standard_icon.png")
 menubar = Menu(calc)
-menu = Menu(menubar, tearoff = 0)
+menu = Menu(menubar, tearoff = False)
 menubar.add_cascade(label = 'Options', menu = menu)
-menu.add_command(label = "Standard", command = Standard)
-menu.add_command(label = "Scientific", command = Scientific)
+menu.add_command(label = "Standard",image=standard_jcon,compound=LEFT,accelerator="ctrl+s",command = Standard)
+menu.add_command(label = "Scientific",image=scientific_jcon,compound=LEFT,command = Scientific)
 menu.add_separator()
 menu.add_command(label = "Exit", command = iExit)
 
