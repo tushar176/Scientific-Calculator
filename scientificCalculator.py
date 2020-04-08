@@ -302,18 +302,18 @@ lblDisplay.grid(row=0, column= 4,columnspan=4)
 
 #**************************MENU************************************#
 
-def iExit():
+def iExit(event=None):
     iExit = tkinter.messagebox.askyesno("Scientific Calculator","Do you want to exit ?")
     if iExit>0:
         root.destroy()
         return
 
-def Scientific():
+def Scientific(event=None):
     root.resizable(width=False, height=False)
     root.geometry("947x559+250+100")
 
 
-def Standard():
+def Standard(event=None):
     root.resizable(width=False, height=False)
     root.geometry("480x559+250+100")
 
@@ -322,12 +322,14 @@ standard_jcon=PhotoImage(file="icons\\standard_icon.png")
 menubar = Menu(calc)
 menu = Menu(menubar, tearoff = False)
 menubar.add_cascade(label = 'Options', menu = menu)
-menu.add_command(label = "Standard",image=standard_jcon,compound=LEFT,accelerator="ctrl+s",command = Standard)
-menu.add_command(label = "Scientific",image=scientific_jcon,compound=LEFT,command = Scientific)
+menu.add_command(label = "Standard",image=standard_jcon,compound=LEFT,accelerator="ctrl+n,command = Standard)
+menu.add_command(label = "Scientific",image=scientific_jcon,compound=LEFT,accelerator="ctrl+s,command = Scientific)
 menu.add_separator()
 menu.add_command(label = "Exit", command = iExit)
 
 #**************************************************************#
 
 root.config(menu=menubar)
+root.bind("<Control-s>",Scientific)
+root.bind("<Control-n>",Standard)
 root.mainloop()
