@@ -6,6 +6,12 @@ One can use this according to his/her requirement.<br>
 Shortcut keys are also binded with the modes so that user can easily transfer between the two modes.<br>
 Shortcut key for Standard Mode is CTRL + N<br>
 Shortcut key for scientific Mode is ctrl + S<br>
-<br>
+
+### **Standard Mode**
+![](standard.PNG)
+
+### **Scientific Mode**
+![](scientific.PNG)
+
 Suggestions are most welcomed.<br>
 Thank You..<br>
